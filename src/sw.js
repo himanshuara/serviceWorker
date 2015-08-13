@@ -37,7 +37,7 @@ console.log("installing");
 
 this.addEventListener('fetch', function(event) {
   console.log("fetch caught");
-  if (/\.jpg$/.test(event.request.url)) {
+ 
  event.respondWith(new Response("Jpeg request intercepted"));
-  }
+  
 });
