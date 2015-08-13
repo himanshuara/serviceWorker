@@ -1,7 +1,7 @@
 
 
 this.addEventListener('install', function(event) {
-  event.waitUntil(
+  /*event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
         '/src/',
@@ -16,7 +16,8 @@ this.addEventListener('install', function(event) {
         '/src/gallery/snowTroopers.jpg'
       ]);
     })
-  );
+  );*/
+console.log("installing");
 });
 
 /*this.addEventListener('fetch', function(event) {
