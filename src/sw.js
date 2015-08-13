@@ -19,7 +19,7 @@ this.addEventListener('install', function(event) {
   );
 });
 
-this.addEventListener('fetch', function(event) {
+/*this.addEventListener('fetch', function(event) {
   var response;
   var cachedResponse = caches.match(event.request).catch(function() {
     return fetch(event.request);
@@ -32,4 +32,14 @@ this.addEventListener('fetch', function(event) {
   }).catch(function() {
     return caches.match('/sw-test/gallery/myLittleVader.jpg');
   });
+});*/
+
+this.addEventListener('fetch', function(event) {
+  if (/\.jpg$/.test(event.request.url)) {
+    event.respondWith(
+      fetch('http://www.html5rocks.com/en/tutorials/service-worker/introduction/images/sw-lifecycle.png', {
+        mode: 'no-cors'
+      })
+    );
+  }
 });
