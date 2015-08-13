@@ -37,7 +37,13 @@ console.log("installing");
 
 this.addEventListener('fetch', function(event) {
   console.log("fetch caught");
- 
- event.respondWith(new Response("Jpeg request intercepted"));
-  
+  /*if (/\.jpg$/.test(event.request.url)) {
+    event.respondWith(
+      fetch('https://www.google.co.uk/logos/doodles/2014/60th-anniversary-of-the-unveiling-of-the-first-routemaster-bus-4922931108904960.3-hp.gif', {
+        mode: 'no-cors'
+      })
+    );
+  }*/
+   event.respondWith(new Response("Request intercepted"));
+    );
 });
