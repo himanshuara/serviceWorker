@@ -20,7 +20,7 @@ this.addEventListener('install', function(event) {
 console.log("installing");
 });
 
-/*this.addEventListener('fetch', function(event) {
+this.addEventListener('fetch', function(event) {
   var response;
   var cachedResponse = caches.match(event.request).catch(function() {
     return fetch(event.request);
@@ -33,7 +33,7 @@ console.log("installing");
   }).catch(function() {
     return caches.match('/sw-test/gallery/myLittleVader.jpg');
   });
-});*/
+});
 
 /*this.addEventListener('fetch', function(event) {
   console.log("fetch caught");
